@@ -1,7 +1,5 @@
 # RemitChain
 
-https://universityofexeteruk-my.sharepoint.com/my?csf=1&web=1&e=wLbPKG&id=%2Fpersonal%2Fjv375%5Fexeter%5Fac%5Fuk%2FDocuments%2FSmart%2DContracts%2DGroup%2DPresentation&FolderCTID=0x0120008DEB88210B123A41A525E29332E6D13F
-
 **Decentralized Cross-Border Remittance Platform**
 
 Send money globally using stablecoins. 0.3% fees. Minutes, not days. Sender protection built in.
