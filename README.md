@@ -15,7 +15,7 @@ RemitChain is a smart contract-based remittance platform built on Ethereum that 
 - **0.3% flat fee** vs 6.2% average bank fee
 - **Multi-currency support** - USD, GBP, EUR, INR, JPY
 - **Two-phase claim** - Claim → Grace Period → Withdraw
-- **Sender protection** - 1-minute grace period to reverse wrong transfers
+- **Sender protection** - 5-minute grace period to reverse wrong transfers 
 - **Emergency freeze** - Admin can pause all operations if exploit detected
 - **Real-time notifications** - Blockchain events notify sender and recipient
 - **Live exchange rates** - Chainlink oracle integration
@@ -30,7 +30,7 @@ Step 1: SEND        Alice deposits 100 USDC into the smart contract
                          ↓
 Step 2: CLAIM       Bob claims the transfer (grace period starts)
                          ↓
-Step 3: GRACE       Alice has 1 minute to REVERSE if sent to wrong address
+Step 3: GRACE       Alice has 5 minute to REVERSE if sent to wrong address
                          ↓
 Step 4: WITHDRAW    Grace expires → Bob withdraws funds to his wallet
 ```
@@ -150,7 +150,7 @@ This will:
 - Deploy the RemitChain contract
 - Register all tokens and price feeds automatically
 - Pre-fund liquidity for all currencies
-- Set grace period to 1 minute
+- Set grace period to 5 minute
 
 Save the printed contract addresses.
 
@@ -189,12 +189,12 @@ Open `http://localhost:3000` in your browser with MetaMask connected to Sepolia.
 1. Connect MetaMask with recipient account
 2. Go to History tab
 3. Click "Claim" on the pending transfer
-4. Wait for grace period to expire (1 minute)
+4. Wait for grace period to expire (5 minute)
 5. Click "Withdraw" to receive funds in wallet
 
 ### Reversing a Transfer (Alice)
 
-1. After Bob claims, Alice has 1 minute to reverse
+1. After Bob claims, Alice has 5 minute to reverse
 2. Go to History tab
 3. Click "Reverse" (red button with countdown timer)
 4. Funds return to Alice minus 0.3% fee
@@ -230,7 +230,7 @@ Open `http://localhost:3000` in your browser with MetaMask connected to Sepolia.
 ## Security Features
 
 - **Two-Phase Claim** - Funds held in contract during grace period, preventing irreversible wrong-address transfers
-- **Sender Reversal** - 1-minute window to reverse after recipient claims
+- **Sender Reversal** - 5-minute window to reverse after recipient claims
 - **Stale Data Protection** - Rejects oracle exchange rates older than 1 hour
 - **Emergency Freeze** - Admin can pause all operations instantly
 - **Access Control** - Admin-only functions for token/feed management
